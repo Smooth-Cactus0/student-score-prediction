@@ -20,9 +20,10 @@ Repository for the Kaggle Playground Series S6E1 competition. The goal is to pre
 | V6 | XGBoost | V2 + Course Relative Study, Interaction Features | 8.7554 |
 | V7 | XGBoost | Conservative FE (Sleep Score, Facility Ratio) | 8.7579 |
 | V7 Tuned | XGBoost (Optuna) | V7 + Massive Tuning | 8.7554 |
-| V8 Pseudo | XGBoost | V7 Tuned + Pseudo-Labels | **8.7343** |
+| V8 Pseudo | XGBoost | V7 Tuned + Pseudo-Labels | 8.7343 |
 | V10 | XGBoost | V7 + Original Dataset (20k rows) | 8.7490 |
-| V4 Blend | Weighted Blend | 0.7*V2 + 0.2*V3 + 0.1*V4 | TBA |
+| V11 | XGBoost | **Original + Pseudo + V7 Features** | **8.7294** |
+| V12 Blend | Weighted Blend | 0.9*V11 + 0.1*V3 | TBA |
 
 ## Key Findings
 - **Study-Attendance Interaction**: The most powerful feature, accounting for ~47% of model importance.
