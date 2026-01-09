@@ -18,6 +18,10 @@ Repository for the Kaggle Playground Series S6E1 competition. The goal is to pre
 | V4 | ANN | MLP (64, 32) | 8.8907 |
 | V5 | XGBoost (Optuna) | V2 Features + Hyperparameter Tuning | 8.7564 |
 | V6 | XGBoost | V2 + Course Relative Study, Interaction Features | 8.7554 |
+| V7 | XGBoost | Conservative FE (Sleep Score, Facility Ratio) | 8.7579 |
+| V7 Tuned | XGBoost (Optuna) | V7 + Massive Tuning | 8.7554 |
+| V8 Pseudo | XGBoost | V7 Tuned + Pseudo-Labels | **8.7343** |
+| V10 | XGBoost | V7 + Original Dataset (20k rows) | 8.7490 |
 | V4 Blend | Weighted Blend | 0.7*V2 + 0.2*V3 + 0.1*V4 | TBA |
 
 ## Key Findings
