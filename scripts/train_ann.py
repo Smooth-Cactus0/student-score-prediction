@@ -66,13 +66,20 @@ def train_ann():
     overall_rmse = np.sqrt(mean_squared_error(y, oof_preds))
     print(f"\nANN Overall CV RMSE: {overall_rmse:.4f}")
     
-    # --- Save ANN Submission ---
-    submission['exam_score'] = test_preds
-    
-    # Robust path
+    # --- Save ANN OOF ---
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     sub_dir = os.path.join(base_dir, 'submissions')
     os.makedirs(sub_dir, exist_ok=True)
+    
+    oof_df = train_df[['id']].copy()
+    oof_df['exam_score'] = y
+    oof_df['pred'] = oof_preds
+    oof_path = os.path.join(sub_dir, 'oof_ann.csv')
+    oof_df.to_csv(oof_path, index=False)
+    print(f"OOF predictions saved to '{oof_path}'")
+    
+    # --- Save ANN Submission ---
+    submission['exam_score'] = test_preds
     
     save_path = os.path.join(sub_dir, 'submission_ann.csv')
     submission.to_csv(save_path, index=False)
